@@ -12,7 +12,6 @@ const composeEnhancers = composeWithDevTools({
   // Specify here name, actionsBlacklist, actionsCreators and other options
 });
  
-// let store = createStore(manageRecipe, applyMiddleware(thunk))
 const middleware = [
   thunk,
 ];
