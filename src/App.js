@@ -1,21 +1,30 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
+// import { fetchRecipes } from './actions/fetchRecipes'
+import RecipesContainer from './containers/RecipesContainer'
 class App extends Component {
 
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/api/v1/recipes/1/reviews', {
-  //     method: 'GET'
-  //   })
-  //     .then(resp => resp.json())
-  //     .then(data => console.log(data))
-  // }
+  componentDidMount(){
+  }
 
   render() {
     return (
       <div className="App">
+        <RecipesContainer />
         App
       </div>
     );
   }
 }
 
-export default App;
+// const mapStateToProps = (state) => {
+//   return {
+//     recipes: state.recipes
+//   }
+// }
+
+
+
+
+
+export default connect()(App);
