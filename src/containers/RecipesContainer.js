@@ -13,7 +13,7 @@ class RecipesContainer extends Component {
         return(
             <div>
                 RecipesContainer
-                <RecipeInput />
+                <RecipeInput /><br></br>
                 <RecipeList recipes = {this.props.recipes} />
             </div>
         )
