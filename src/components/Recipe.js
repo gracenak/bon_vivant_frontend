@@ -1,4 +1,5 @@
 import React from 'react'
+import ReviewsContainer from '../containers/ReviewsContainer'
 
 const Recipe = (props) => {
     console.log(props)
@@ -6,9 +7,12 @@ const Recipe = (props) => {
     console.log(recipe)
 
     return (
+        <div>
         <h2>
         {recipe ? recipe.attributes.title : null }
         </h2>
+        <ReviewsContainer recipe={recipe} />
+        </div>
     )
 }
 
