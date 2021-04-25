@@ -7,7 +7,7 @@ export default function manageRecipe(state = {recipes: []}, action) {
             }
         case "ADD_RECIPE":
             return {
-                ...state, recipes: [...state.recipes, action.payload]
+                ...state, recipes: [...state.recipes.data, action.payload]
             }
         default:
             return state

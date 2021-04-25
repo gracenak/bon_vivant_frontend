@@ -10,7 +10,7 @@ export const addRecipe = (data) => {
         body: JSON.stringify(data)
       })
       .then(response => response.json())
-      .then(recipe => dispatch({type: 'ADD_ACCOUNT', payload: recipe}))
+      .then(recipe => dispatch({type: 'ADD_RECIPE', payload: recipe}))
     }
   
   }

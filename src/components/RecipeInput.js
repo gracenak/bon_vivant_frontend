@@ -13,20 +13,20 @@ class RecipeInput extends Component {
 
     handleOnChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+          [event.target.name]: event.target.value
         })
     }
 
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.addRecipe(this.state)
-        // this.setState({
-        //     title: '',
-        //     img: '',
-        //     ingredients: '',
-        //     directions: '',
-        //     cook_time: ''
-        // })
+        this.setState({
+            title: '',
+            img: '',
+            ingredients: '',
+            directions: '',
+            cook_time: ''
+        })
     }
 
     render(){
@@ -40,12 +40,12 @@ class RecipeInput extends Component {
                 <input type="text" placeholder="Directions" value={this.state.directions} name="directions" onChange={this.handleOnChange}/>
                 <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>
                 <input type="text" placeholder="User" value={this.state.user_id} name="user_id" onChange={this.handleOnChange}/>
-                <input type="submit" />
+                <input type="submit" value="Submit"/>
             </form>
+            <p>Input: {this.state.title}</p>
         </div>
         )
     }
-
 }
 
 export default connect(null, { addRecipe })(RecipeInput)
