@@ -14,9 +14,9 @@ class RecipesContainer extends Component {
     render() {
         return(
             <div>
-                <Route path='/recipes/new' component={RecipeInput}/><br></br>
-                <Route path='recipes/:id' render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
-                <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes} />} />
+                    <Route path='/recipes/new' component={RecipeInput}/><br></br>
+                    <Route path='/recipes/:id' render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
+                    <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes} />} />
             </div>
         )
     }
@@ -30,3 +30,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchRecipes })(RecipesContainer)
+

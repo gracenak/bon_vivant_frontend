@@ -1,5 +1,6 @@
 import React from 'react'
-import Recipe from './Recipe'
+// import Recipe from './Recipe'
+import { Link } from 'react-router-dom'
 
 const RecipeList = (props) => {
 
@@ -8,21 +9,15 @@ const RecipeList = (props) => {
         <div>
             <h3>Recipes!</h3>
             {props.recipes.data.map(recipe =>
-     <div key={recipe.attributes.id}><Recipe recipe={recipe.attributes} /></div>
-     )}
-
+                <li key={recipe.attributes.id}>
+                    <Link to={`/recipes/${recipe.attributes.id}`}>{recipe.attributes.title}</Link>
+                </li>)}
         </div>
-    
     )
 }
 
 export default RecipeList
 
-
-
-
-
-
-
-//  {props.recipes.data.map(recipe => 
-//     <li key={recipe.id}>{recipe.attributes.title}</li>)}
+// {props.recipes.data.map(recipe =>
+//     <div key={recipe.attributes.id}><Recipe recipe={recipe.attributes} /></div>
+//     )}
