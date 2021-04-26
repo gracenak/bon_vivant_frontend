@@ -8,7 +8,6 @@ import manageRecipe from './reducers/manageRecipe'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { BrowserRouter as Router } from 'react-router-dom' 
 
-
 const composeEnhancers = composeWithDevTools({
   // Specify here name, actionsBlacklist, actionsCreators and other options
 });

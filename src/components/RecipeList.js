@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 const RecipeList = (props) => {
 
-    console.log(props)
+    console.log(props.recipes.data)
     return(
         <div>
             <h3>Recipes!</h3>
-            {props.recipes.data.map(recipe =>
+            {props.recipes.data && props.recipes.data.map(recipe =>
                 <li key={recipe.attributes.id}>
                     <Link to={`/recipes/${recipe.attributes.id}`}>{recipe.attributes.title}</Link>
                 </li>)}
