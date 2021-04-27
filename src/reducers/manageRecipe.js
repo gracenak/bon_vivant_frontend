@@ -28,15 +28,17 @@ export default function manageRecipe(state = {recipes: []}, action) {
                 }
             })
             return {...state, recipes: allRecipes}
+        case 'EDIT RECIPE':
+            let RecipesToEdit = state.recipes.map(recipe => {
+                if (recipe.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return recipe
+                }
+            })
+            return {...state, recipes: RecipesToEdit}
 
         default:
             return state
     }
 }
-
-
-
-// ...state,
-// recipes: [...state.recipes]  
-
-

@@ -8,6 +8,13 @@ export const addReview = (review, recipeId) => {
             body: JSON.stringify(review)
             })
             .then(response => response.json())
-            .then(recipe => dispatch({type: 'ADD_REVIEW', payload: recipe}))
+            .then(recipe => {
+                if (recipe.error) {
+                    alert(recipe.error)
+                } else {
+                dispatch({type: 'ADD_REVIEW', payload: recipe})
+            }
+        })
+    
     }
 }
