@@ -7,11 +7,11 @@ class ReviewsContainer extends Component {
         return (
             <div>
                 ReviewsContainer
-                <ReviewInput />
+                <ReviewInput recipe={this.props.recipe}/>
                 <ReviewList reviews={this.props.recipe && this.props.recipe.reviews}/>
             </div>
         )
-    }
+    }   
 }
 
 export default ReviewsContainer

@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 const RecipeList = (props) => {
 
-    console.log(props.recipes.data)
+    console.log(props.recipes)
     return(
         <div>
             <h3>Recipes!</h3>
-            {props.recipes.data && props.recipes.data.map(recipe =>
-                <li key={recipe.attributes.id}>
-                    <Link to={`/recipes/${recipe.attributes.id}`}>{recipe.attributes.title}</Link>
+            {props.recipes && props.recipes.map(recipe =>
+                <li key={recipe.id}>
+                    <Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link>
                 </li>)}
         </div>
     )
