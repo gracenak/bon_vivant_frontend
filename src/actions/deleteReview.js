@@ -1,6 +1,6 @@
-export const deleteReview = (reviewId, accountId) => {
+export const deleteReview = (reviewId, recipeSlug) => {
     return (dispatch) => {
-        return fetch(`http://localhost:3000/api/v1/recipes/${accountId}/reviews/${reviewId}`, {
+        return fetch(`http://localhost:3000/api/v1/recipes/${recipeSlug}/reviews/${reviewId}`, {
             method: "DELETE"
         })
         .then(response => response.json())

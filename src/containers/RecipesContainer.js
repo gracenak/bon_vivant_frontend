@@ -15,7 +15,7 @@ class RecipesContainer extends Component {
         return(
             <Switch>
                 <>
-                <Route exact path='/recipes/:id' render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
+                <Route exact path='/recipes/:slug' render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
                 <Route path='/recipes/new' component={RecipeInput}/><br></br>
                 <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes} />} />
                 </>

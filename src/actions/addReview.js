@@ -1,6 +1,7 @@
-export const addReview = (review, recipeId) => {
+export const addReview = (review, slug) => {
+    debugger
     return (dispatch) => {
-        fetch(`http://localhost:3000/api/v1/recipes/${recipeId}/reviews`, {
+        fetch(`http://localhost:3000/api/v1/recipes/${slug}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
