@@ -1,5 +1,5 @@
 export default function manageRecipe(state = {recipes: []}, action) {
-    // console.log(state)
+    console.log(state)
     switch(action.type) {
         case "FETCH_RECIPES":
             return {
@@ -20,7 +20,7 @@ export default function manageRecipe(state = {recipes: []}, action) {
             return {...state, recipes: recipes}
         case 'DELETE_REVIEW':
             debugger
-            let allRecipes = state.recipes.map(recipe => {
+            let allRecipes = state.recipes.filter(recipe => {
                 if (recipe.id === action.payload.id) {
                     return action.payload
                 } else {
@@ -28,6 +28,9 @@ export default function manageRecipe(state = {recipes: []}, action) {
                 }
             })
             return {...state, recipes: allRecipes}
+
+            // const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id);
+           
         case 'EDIT RECIPE':
             let RecipesToEdit = state.recipes.map(recipe => {
                 if (recipe.id === action.payload.id) {

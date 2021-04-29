@@ -33,17 +33,14 @@ class RecipeEdit extends Component {
     render(){
         return(
         <div>
-            <h3>Recipe Form</h3>
+            <h3>Recipe Edit Form</h3>
             <form onSubmit={this.handleOnSubmit}>
                 <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleOnChange}/>
                 <input type="text" placeholder="Image URL" value={this.state.img} name="img" onChange={this.handleOnChange}/>
                 <input type="text" placeholder="Ingredients" value={this.state.ingredients} name="ingredients" onChange={this.handleOnChange}/>
                 <input type="text" placeholder="Directions" value={this.state.directions} name="directions" onChange={this.handleOnChange}/>
-                <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>
-                <input type="text" placeholder="User" value={this.state.user_id} name="user_id" onChange={this.handleOnChange}/>
-                <input type="submit" value="Submit"/>
+                <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>                <input type="submit" value="Submit"/>
             </form>
-            <p>Input: {this.state.title}</p>
         </div>
         )
     }
