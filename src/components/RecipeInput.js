@@ -60,7 +60,7 @@ const RecipeWrapper = styled.div`
   border-left: 1px solid rgba(0,0,0,0.1);
   height: 100vh;
   padding-top: 100px;
-  background: black;
+  background: #f6f1f0;
   padding-right: 80px;
 `
 
@@ -69,7 +69,7 @@ const RecipeHeadline = styled.div`
   font-size:20px;
   padding: 15px 0;
   font-weight: bold;
-  color: #fff;
+  color: black;
 `
 class RecipeInput extends Component {
     state = {
@@ -124,7 +124,6 @@ class RecipeInput extends Component {
                 Create New Recipe
             </SubmitBtn>
             </form>
-            <p>Input: {this.state.title}</p>
             </div>
         </RecipeWrapper>
         )

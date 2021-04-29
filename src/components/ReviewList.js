@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import { connect } from 'react-redux'
 import { deleteReview } from '../actions/deleteReview'
 import styled from "styled-components";
 import ReviewCard from './ReviewCard'
 
-const Card = styled.div`
+const RatingGrid = styled.div`
   border-radius: 4px;
   border: 1px solid #E6E6E6;
   padding: 20px;
@@ -13,9 +13,12 @@ const Card = styled.div`
   margin-right: 12px;
 `
 
-const RatingContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+const ReviewsHeader = styled.div`
+  text-align: center;
+  font-size:20px;
+  padding: 15px 0;
+  font-weight: bold;
+  color: black;
 `
 
 const ReviewList = ({ reviews }) => {
@@ -30,12 +33,12 @@ const ReviewList = ({ reviews }) => {
     }
 
     return(
-        <Card>
-            <RatingContainer>
+        <RatingGrid>
+            <ReviewsHeader>{reviews.length} Reviews</ReviewsHeader>
                 {reviewCard}
-            </RatingContainer> 
-        </Card>
+        </RatingGrid> 
     )
+
 }
 
 export default connect(null, { deleteReview })(ReviewList)
@@ -44,3 +47,4 @@ export default connect(null, { deleteReview })(ReviewList)
 
 {/* <button onClick={() => handleOnDelete(review)}> Delete</button> */}
 
+// {reviews.length}

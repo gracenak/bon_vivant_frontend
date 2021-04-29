@@ -27,10 +27,11 @@ const Header = styled.div`
   }
 `;
 
+
 const Subheader = styled.div`
   font-weight: 300;
   font-size: 26px;
-`;
+`
 
 const Grid = styled.div`
   display: grid;

@@ -53,7 +53,7 @@ const ReviewWrapper = styled.div`
   padding-right: 80px;
 `
 
-const RecipeHeadline = styled.div`
+const ReviewHeadline = styled.div`
   text-align: center;
   font-size:20px;
   padding: 15px 0;
@@ -65,12 +65,10 @@ class ReviewsContainer extends Component {
     render() {
         return (
             <ReviewWrapper>
-                <RecipeHeadline>Share A Review </RecipeHeadline>
+                <ReviewHeadline>Share A Review </ReviewHeadline>
                 <ReviewInput recipe={this.props.recipe}
                              recipeId={this.props.recipe && this.props.recipe.id}
                 />
-<ReviewList reviews={this.props.recipe && this.props.recipe.reviews}
-/> 
 
             </ReviewWrapper>
         )

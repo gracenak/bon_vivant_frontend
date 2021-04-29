@@ -50,6 +50,13 @@ const RatingContainer = styled.div`
   padding:20px;
   background: #fff;
 `
+const RatingLabel = styled.div`
+  text-align: center;
+  font-size:18px;
+  padding: 15px 0;
+  font-weight: bold;
+  color: black;
+`
 
 
 class ReviewInput extends Component {
@@ -89,7 +96,7 @@ class ReviewInput extends Component {
                     <input type="text" name="comment" placeholder="comment" value={this.state.comment || ''} onChange={this.handleOnChange}/>
                 </Field>
                     <RatingContainer>
-                    <label> Rating</label>
+                    <RatingLabel> Rate This Recipe</RatingLabel>
 
                     <Field>
 

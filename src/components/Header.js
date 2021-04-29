@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   padding: 50px 100px 50px 0;
   font-size: 18px;
-
   img {
       box-sizing: border-box;
       width: 270px;

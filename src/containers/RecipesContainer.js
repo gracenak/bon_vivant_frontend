@@ -19,14 +19,11 @@ class RecipesContainer extends Component {
             <div>
             <NavBar />
             <Switch>
-                <>
+                <Route exact path='/recipes/new' component={RecipeInput}/>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/recipes/new' component={RecipeInput}/><br></br>
                 <Route exact path='/recipes/:slug' render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes} />} />
                 <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes} />} />
                 <Route exact path='/recipes/:slug/edit' render={(routerProps) => <RecipeEdit {...routerProps} recipes={this.props.recipes} />} />
-
-                </>
             </Switch>
             </div>
         )

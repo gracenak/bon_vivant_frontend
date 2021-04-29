@@ -39,7 +39,7 @@ const Recipe = (props) => {
     let recipe = props.recipes.filter(recipe => recipe.slug == props.match.params.slug)[0]
     console.log(recipe)
 
-    let data = props.recipe
+    let data = props.recipe || ''
 
     return (
         <Wrapper>
@@ -52,7 +52,7 @@ const Recipe = (props) => {
             <h4>{recipe ? recipe.ingredients : null}</h4><br></br>
             <h3>Directions:</h3>
             <h5>{recipe ? recipe.directions : null}</h5>
-        <ReviewList reviews={data && data.reviews} />
+        <ReviewList reviews={recipe && recipe.reviews} />
 
             <RecipeEdit recipe={recipe}/>
         </Main>

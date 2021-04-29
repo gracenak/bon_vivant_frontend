@@ -25,19 +25,38 @@ const ReviewRating = styled.div`
   font-family: 'Poppins-Bold';
   font-size: 18px;
 `
+const ReviewAuthor = styled.div`
+  padding: 20px 0px 0px 0px;
+  font-family: 'Poppins-Bold';
+  font-size: 15px;
+`
+
+const Icon = styled.button`
+  box-shadow: none;
+  border-radius: 4px;
+  margin: 0 4px;
+  i {
+    font-size: 18px;
+  }
+`
+
 
 const ReviewCard = ({ review }) => {
+
+
     return (
         <Card>
         <ReviewContainer>
             <ReviewRating>
-                {review.rating} Stars by {review.username}
+                {review.rating} Stars
             </ReviewRating>
+        </ReviewContainer>
+            <ReviewAuthor>
+            {review.username} says:
+            </ReviewAuthor><br></br>
             <ReviewComment>
                 {review.comment}
             </ReviewComment>
-
-        </ReviewContainer>
         </Card>
     )
 }
