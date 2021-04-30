@@ -2,6 +2,66 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import { addRecipe } from '../actions/addRecipe'
 import styled from "styled-components";
+class RecipeInput extends Component {
+    state = {
+        title: '',
+        img: '',
+        ingredients: '',
+        directions: '',
+        cook_time: ''
+    }
+
+    handleOnChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        this.props.addRecipe(this.state)
+        this.setState({
+            title: '',
+            img: '',
+            ingredients: '',
+            directions: '',
+            cook_time: ''
+        })
+    }
+
+    render(){
+        return(
+        <RecipeWrapper>
+            <RecipeHeadline>Create New Recipe</RecipeHeadline>
+            <div className="form-container">
+            <form onSubmit={this.handleOnSubmit}>
+            <Field>
+                <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleOnChange}/>
+            </Field>
+            <Field>
+                <input type="text" placeholder="Image URL" value={this.state.img} name="img" onChange={this.handleOnChange}/>
+            </Field>
+            <Field>
+                <input type="text" placeholder="Ingredients" value={this.state.ingredients} name="ingredients" onChange={this.handleOnChange}/>
+            </Field>
+            <Field>
+                <input type="text" placeholder="Directions" value={this.state.directions} name="directions" onChange={this.handleOnChange}/>
+            </Field>
+            <Field>
+                <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>
+            </Field>
+
+            <SubmitBtn type="submit">
+                Create New Recipe
+            </SubmitBtn>
+            </form>
+            </div>
+        </RecipeWrapper>
+        )
+    }
+}
+
+export default connect(null, { addRecipe })(RecipeInput)
 
 const RatingContainer = styled.div`
   text-align: center;
@@ -71,63 +131,3 @@ const RecipeHeadline = styled.div`
   font-weight: bold;
   color: black;
 `
-class RecipeInput extends Component {
-    state = {
-        title: '',
-        img: '',
-        ingredients: '',
-        directions: '',
-        cook_time: ''
-    }
-
-    handleOnChange = (event) => {
-        this.setState({
-          [event.target.name]: event.target.value
-        })
-    }
-
-    handleOnSubmit = (event) => {
-        event.preventDefault()
-        this.props.addRecipe(this.state)
-        this.setState({
-            title: '',
-            img: '',
-            ingredients: '',
-            directions: '',
-            cook_time: ''
-        })
-    }
-
-    render(){
-        return(
-        <RecipeWrapper>
-            <RecipeHeadline>Create New Recipe</RecipeHeadline>
-            <div className="form-container">
-            <form onSubmit={this.handleOnSubmit}>
-            <Field>
-                <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleOnChange}/>
-            </Field>
-            <Field>
-                <input type="text" placeholder="Image URL" value={this.state.img} name="img" onChange={this.handleOnChange}/>
-            </Field>
-            <Field>
-                <input type="text" placeholder="Ingredients" value={this.state.ingredients} name="ingredients" onChange={this.handleOnChange}/>
-            </Field>
-            <Field>
-                <input type="text" placeholder="Directions" value={this.state.directions} name="directions" onChange={this.handleOnChange}/>
-            </Field>
-            <Field>
-                <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>
-            </Field>
-
-            <SubmitBtn type="submit">
-                Create New Recipe
-            </SubmitBtn>
-            </form>
-            </div>
-        </RecipeWrapper>
-        )
-    }
-}
-
-export default connect(null, { addRecipe })(RecipeInput)

@@ -2,7 +2,27 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components";
 
-// Styled component named StyledButton
+const RecipeCard = (props) => {
+    return (
+        <Card>
+            <RecipeTitle>
+                {props.attributes.title}
+            </RecipeTitle>
+            <RecipeImg>
+                <img src={props.attributes.img} alt={props.attributes.title} />
+            </RecipeImg>
+            <div className="recipe-rating">
+                {props.attributes.avg_rating}
+            </div>
+            <LinkWrapper>
+            <Link to={`/recipes/${props.attributes.slug}`}>View Recipe </Link>
+            </LinkWrapper>
+        </Card>
+    )
+}
+
+export default RecipeCard
+
 const Card = styled.div`
   border: 1px solid #efefef;
   background: #fff;
@@ -36,27 +56,3 @@ const LinkWrapper = styled.div`
       text-decoration: none;
   }
 `;
-
-
-
-
-const RecipeCard = (props) => {
-    return (
-        <Card>
-            <RecipeTitle>
-                {props.attributes.title}
-            </RecipeTitle>
-            <RecipeImg>
-                <img src={props.attributes.img} alt={props.attributes.title} />
-            </RecipeImg>
-            <div className="recipe-rating">
-                {props.attributes.avg_rating}
-            </div>
-            <LinkWrapper>
-            <Link to={`/recipes/${props.attributes.slug}`}>View Recipe </Link>
-            </LinkWrapper>
-        </Card>
-    )
-}
-
-export default RecipeCard

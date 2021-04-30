@@ -1,7 +1,19 @@
 import { Component } from 'react'
 import ReviewInput from '../components/ReviewInput'
-import ReviewList from '../components/ReviewList'
 import styled from "styled-components";
+class ReviewsContainer extends Component {
+    render() {
+        return (
+            <ReviewWrapper>
+                <ReviewHeadline>Share A Review </ReviewHeadline>
+                <ReviewInput recipe={this.props.recipe}
+                             recipeId={this.props.recipe && this.props.recipe.id} />
+            </ReviewWrapper>
+        )
+    }   
+}
+
+export default ReviewsContainer
 
 const Field = styled.div`
   border-radius: 4px;
@@ -60,23 +72,3 @@ const ReviewHeadline = styled.div`
   font-weight: bold;
   color: black;
 `
-
-class ReviewsContainer extends Component {
-    render() {
-        return (
-            <ReviewWrapper>
-                <ReviewHeadline>Share A Review </ReviewHeadline>
-                <ReviewInput recipe={this.props.recipe}
-                             recipeId={this.props.recipe && this.props.recipe.id}
-                />
-
-            </ReviewWrapper>
-        )
-    }   
-}
-
-export default ReviewsContainer
-
-/* <ReviewList reviews={this.props.recipe && this.props.recipe.reviews}/> */
-{/* <ReviewList reviews={this.props.recipe && this.props.recipe.reviews}
-/>  */}

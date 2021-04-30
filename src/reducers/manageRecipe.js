@@ -27,10 +27,7 @@ export default function manageRecipe(state = {recipes: []}, action) {
                     return recipe
                 }
             })
-            return {...state, recipes: allRecipes}
-
-            // const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id);
-           
+            return {...state, recipes: allRecipes}           
         case 'EDIT RECIPE':
             let RecipesToEdit = state.recipes.map(recipe => {
                 if (recipe.id === action.payload.id) {

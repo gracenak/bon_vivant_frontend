@@ -1,8 +1,25 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { deleteReview } from '../actions/deleteReview'
 import styled from "styled-components";
 import ReviewCard from './ReviewCard'
+
+const ReviewList = ({ reviews }) => {
+    console.log(reviews)
+
+    const reviewCard = reviews != null && reviews.length > 0 ? reviews.map(review => 
+        <ReviewCard key={review.id} review={review}  /> ) : null
+
+    return(
+        <RatingGrid>
+            <ReviewsHeader>{reviews.length} Reviews</ReviewsHeader>
+                {reviewCard}
+        </RatingGrid> 
+    )
+}
+{/* <button onClick={() => handleOnDelete(review)}> Delete</button> */}
+
+export default connect(null, { deleteReview })(ReviewList)
 
 const RatingGrid = styled.div`
   border-radius: 4px;
@@ -21,30 +38,8 @@ const ReviewsHeader = styled.div`
   color: black;
 `
 
-const ReviewList = ({ reviews }) => {
-    console.log(reviews)
-
-    const reviewCard = reviews != null && reviews.length > 0 ? reviews.map(review => <ReviewCard key={review.id} review={review}/>) : null
-
-
-    const handleOnDelete = (review) => {
-        debugger
-        reviews.deleteReview(review)
-    }
-
-    return(
-        <RatingGrid>
-            <ReviewsHeader>{reviews.length} Reviews</ReviewsHeader>
-                {reviewCard}
-        </RatingGrid> 
-    )
-
-}
-
-export default connect(null, { deleteReview })(ReviewList)
-
-{/* <li key={review.id}>{review.comment}-{review.rating} <button onClick={() => handleOnDelete(review)}> Delete</button></li>)} */}
-
-{/* <button onClick={() => handleOnDelete(review)}> Delete</button> */}
-
-// {reviews.length}
+const StyledButton = styled.button`
+  background-color: black;
+  font-size: 32px;
+  color: white;
+`;

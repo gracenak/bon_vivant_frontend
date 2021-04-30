@@ -1,9 +1,43 @@
 import React from 'react'
 import ReviewsContainer from '../containers/ReviewsContainer'
 import RecipeEdit from './RecipeEdit'
-import Header from './Header'
 import styled from "styled-components";
 import ReviewList from '../components/ReviewList'
+import { Link } from 'react-router-dom'
+
+
+
+const Recipe = (props) => {
+    // let recipe = props.recipes[props.match.params.id - 1]
+    let recipe = props.recipes.filter(recipe => recipe.slug == props.match.params.slug)[0]
+
+    return (
+        <Wrapper>
+            <Column>
+                <Main>
+                    <h2>{recipe ? recipe.title : null } </h2>
+                    Average Rating: {recipe ? recipe.avg_rating : null} 
+                    <h3>Total Cook Time: {recipe ? recipe.cook_time : null}</h3>
+                    <img src={recipe ? recipe.img : null} alt={recipe ? recipe.img : null}/>
+                    <h3>Ingredients:</h3>
+                        {recipe ? recipe.ingredients : null}<br></br>
+                    <h3>Directions:</h3>
+                        {recipe ? recipe.directions : null}
+                    <LinkWrapper>
+                        <Link to={`/recipes/${recipe.slug}/edit`}>Edit Recipe </Link>
+                    </LinkWrapper>
+                    <ReviewList reviews={recipe && recipe.reviews} />
+                    <RecipeEdit recipe={recipe} />
+                </Main>
+            </Column>
+            <Column>
+                <ReviewsContainer recipe={recipe} />
+            </Column>
+        </Wrapper>
+    )
+}
+
+export default Recipe
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -32,57 +66,16 @@ const Main = styled.div`
   padding-left: 60px;
 `
 
-const Recipe = (props) => {
-    console.log(props)
-    // let recipe1 = props.match.params.slug
-    // let recipe = props.recipes[props.match.params.id - 1]
-    let recipe = props.recipes.filter(recipe => recipe.slug == props.match.params.slug)[0]
-    console.log(recipe)
-
-    let data = props.recipe || ''
-
-    return (
-        <Wrapper>
-        <Column>
-        <Main>
-            <h2>{recipe ? recipe.title : null } </h2>
-            <h3>Total Cook Time: {recipe ? recipe.cook_time : null}</h3>
-            <img src={recipe ? recipe.img : null} alt={recipe ? recipe.img : null}/>
-            <h3>Ingredients:</h3>
-            <h4>{recipe ? recipe.ingredients : null}</h4><br></br>
-            <h3>Directions:</h3>
-            <h5>{recipe ? recipe.directions : null}</h5>
-        <ReviewList reviews={recipe && recipe.reviews} />
-
-            <RecipeEdit recipe={recipe}/>
-        </Main>
-            </Column>
-            <Column>
-                <ReviewsContainer recipe={recipe} />
-
-            </Column>
-
-
-        </Wrapper>
-
-    )
-}
-
-export default Recipe
-
-// {props.recipe.title}
-
-// {/* <div>
-//         <h2>{recipe ? recipe.title : null } </h2>
-//         <h3>Total Cook Time: {recipe ? recipe.cook_time : null}</h3>
-//         <img src={recipe ? recipe.img : null} alt={recipe ? recipe.img : null}/>
-//         <h3>Ingredients:</h3>
-//         <h4>{recipe ? recipe.ingredients : null}</h4><br></br>
-//         <h3>Directions:</h3>
-//         <h5>{recipe ? recipe.directions : null}</h5>
-//         <ReviewsContainer recipe={recipe} />
-//         <RecipeEdit recipe={recipe}/>
-//         </div> */}
-
-{/* <ReviewList reviews={data && data.reviews}
-/>  */}
+const LinkWrapper = styled.div`
+  margin: 30px 0 20px 0;
+  height: 50px;
+  a {
+      color: #fff;
+      background: #000;
+      border-radius: 4px;
+      padding: 10px 50px;
+      border: 1px solid #000;
+      width: 100%;
+      text-decoration: none;
+  }
+`;
