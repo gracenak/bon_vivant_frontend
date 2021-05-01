@@ -54,7 +54,6 @@ class ReviewInput extends Component {
                     <SubmitBtn type="submit">Create A Review</SubmitBtn>
                 </form>
             </div>
-
         )
     }
 }

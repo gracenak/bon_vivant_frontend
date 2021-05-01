@@ -1,11 +1,8 @@
 import React from 'react'
 import ReviewsContainer from '../containers/ReviewsContainer'
-import RecipeEdit from './RecipeEdit'
+// import RecipeEdit from './RecipeEdit'
 import styled from "styled-components";
 import ReviewList from '../components/ReviewList'
-import { Link } from 'react-router-dom'
-
-
 
 const Recipe = (props) => {
     // let recipe = props.recipes[props.match.params.id - 1]
@@ -23,11 +20,8 @@ const Recipe = (props) => {
                         {recipe ? recipe.ingredients : null}<br></br>
                     <h3>Directions:</h3>
                         {recipe ? recipe.directions : null}
-                    <LinkWrapper>
-                        <Link to={`/recipes/${recipe.slug}/edit`}>Edit Recipe </Link>
-                    </LinkWrapper>
                     <ReviewList reviews={recipe && recipe.reviews} />
-                    <RecipeEdit recipe={recipe} />
+                    {/* <RecipeEdit recipe={recipe && recipe} /> */}
                 </Main>
             </Column>
             <Column>
@@ -66,16 +60,7 @@ const Main = styled.div`
   padding-left: 60px;
 `
 
-const LinkWrapper = styled.div`
-  margin: 30px 0 20px 0;
-  height: 50px;
-  a {
-      color: #fff;
-      background: #000;
-      border-radius: 4px;
-      padding: 10px 50px;
-      border: 1px solid #000;
-      width: 100%;
-      text-decoration: none;
-  }
-`;
+
+// <LinkWrapper>
+// <Link to={`/recipes/${recipe.slug}/edit`}>Edit Recipe </Link>
+// </LinkWrapper>

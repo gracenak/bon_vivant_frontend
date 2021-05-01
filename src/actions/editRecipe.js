@@ -10,7 +10,19 @@ export const editRecipe = (data) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(recipe => dispatch({type: 'EDIT_RECIPE', payload: recipe}))
+    .then(recipe => {
+      if (recipe.error) {
+          alert(recipe.error)
+      } else {
+      dispatch({type: 'EDIT_RECIPE', payload: recipe})
+      alert('Your recipe has been updated! Return back to Recipes to view')
+      }
+  })
+
+
+
+
+    // .then(recipe => dispatch({type: 'EDIT_RECIPE', payload: recipe.slug}))
   }
 
 }

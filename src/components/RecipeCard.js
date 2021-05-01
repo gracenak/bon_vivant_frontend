@@ -26,7 +26,7 @@ export default RecipeCard
 const Card = styled.div`
   border: 1px solid #efefef;
   background: #fff;
-  text-alig: center
+  text-align: center
 `;
 
 const RecipeImg = styled.div`
@@ -36,6 +36,7 @@ const RecipeImg = styled.div`
     width: 50px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 100%;
+    text-align: center
   }
 `
 

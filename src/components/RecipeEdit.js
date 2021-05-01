@@ -4,7 +4,6 @@ import { editRecipe } from '../actions/editRecipe'
 import styled from "styled-components";
 class RecipeEdit extends Component {
     state = {
-        // recipe: {},
         title: '',
         img: '',
         ingredients: '',
@@ -38,9 +37,6 @@ class RecipeEdit extends Component {
             <div className="form-container">
             <form onSubmit={this.handleOnSubmit}>
                 <Field>
-                    <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleOnChange}/>
-                </Field>
-                <Field>
                     <input type="text" placeholder="Image URL" value={this.state.img} name="img" onChange={this.handleOnChange}/>
                 </Field>
                 <Field>
@@ -52,10 +48,7 @@ class RecipeEdit extends Component {
                 <Field>
                     <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>
                 </Field>
-
-                <SubmitBtn type="submit">
-                    Edit Recipe
-                </SubmitBtn>
+                <SubmitBtn type="submit">Edit Recipe</SubmitBtn>
             </form>
             </div>
         </RecipeWrapper>
@@ -131,7 +124,7 @@ const RecipeHeadline = styled.div`
 
 
 
-        {/* <div>
+    /* <div>
             <h3>Recipe Edit Form</h3>
             <form onSubmit={this.handleOnSubmit}>
                 <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleOnChange}/>
@@ -141,4 +134,4 @@ const RecipeHeadline = styled.div`
                 <input type="text" placeholder="Total Cook Time" value={this.state.cook_time} name="cook_time" onChange={this.handleOnChange}/>                
                 <input type="submit" value="Submit"/>
             </form>
-        </div> */}
+        </div> */

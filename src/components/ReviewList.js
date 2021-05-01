@@ -5,19 +5,18 @@ import styled from "styled-components";
 import ReviewCard from './ReviewCard'
 
 const ReviewList = ({ reviews }) => {
-    console.log(reviews)
 
     const reviewCard = reviews != null && reviews.length > 0 ? reviews.map(review => 
         <ReviewCard key={review.id} review={review}  /> ) : null
 
     return(
         <RatingGrid>
-            <ReviewsHeader>{reviews.length} Reviews</ReviewsHeader>
+            <ReviewsHeader>{reviews && reviews.length} Reviews</ReviewsHeader>
                 {reviewCard}
         </RatingGrid> 
     )
 }
-{/* <button onClick={() => handleOnDelete(review)}> Delete</button> */}
+/* <button onClick={() => handleOnDelete(review)}> Delete</button> */
 
 export default connect(null, { deleteReview })(ReviewList)
 
@@ -37,9 +36,3 @@ const ReviewsHeader = styled.div`
   font-weight: bold;
   color: black;
 `
-
-const StyledButton = styled.button`
-  background-color: black;
-  font-size: 32px;
-  color: white;
-`;

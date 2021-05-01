@@ -63,17 +63,6 @@ class RecipeInput extends Component {
 
 export default connect(null, { addRecipe })(RecipeInput)
 
-const RatingContainer = styled.div`
-  text-align: center;
-  border-radius: 4px;
-  font-size:20px;
-  padding: 40px 0 10px 0;
-  border: 1px solid #e6e6e6;
-  margin: 20px 0;
-  padding:20px;
-  background: #fff;
-`
-
 const Field = styled.div`
   border-radius: 4px;
   input {

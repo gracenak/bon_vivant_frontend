@@ -15,42 +15,6 @@ class ReviewsContainer extends Component {
 
 export default ReviewsContainer
 
-const Field = styled.div`
-  border-radius: 4px;
-  input {
-    width: 96%;
-    min-height:40px;
-    border-radius: 4px;
-    border: 1px solid #E6E6E6;
-    margin: 12px 0;
-    padding: 12px;
-  }
-  
-  textarea {
-    width: 100%;
-    min-height:80px;
-    border-radius: 4px;
-    border: 1px solid #E6E6E6;
-    margin: 12px 0;
-    padding: 12px;      
-  }
-`
-
-const SubmitBtn = styled.button`
-  color: #fff;
-  background-color: #71b406;
-  border-radius: 4px;   
-  padding:12px 12px;  
-  border: 1px solid #71b406;
-  width:100%;
-  font-size:18px;
-  cursor: pointer;
-  transition: ease-in-out 0.2s;
-  &:hover {
-    background: #71b406;
-    border-color: #71b406;
-  }
-`
 
 const ReviewWrapper = styled.div`
   background:white;

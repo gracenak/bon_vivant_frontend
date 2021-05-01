@@ -1,6 +1,7 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
 import styled from "styled-components";
+import RecipeInput from '../components/RecipeInput'
 
 const RecipeList = (props) => {
 
@@ -10,44 +11,56 @@ const RecipeList = (props) => {
     )
         
     return(
-        <Home>
-            <Header>
-                <h1>Bon Vivant</h1>
-                <Subheader>A collection of tested and reviewed recipes for food lovers</Subheader>
-            </Header>
+          <Wrapper>
+            <Column>
+                <Main>
                 <Grid>
                 {card}
             </Grid>
-        </Home>
+            </Main>
+            </Column>
+            <Column>
+              <RecipeInput />
+            </Column>
+        </Wrapper>
+  
     )
 }
 
 export default RecipeList
 
-const Home = styled.div`
-  text-align: center;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f6f1f0
-`
-
-const Header = styled.div`
-  padding: 100px 100px 10px 100px;
-  h1 {
-      font-size: 42px;
-  }
-`
-
-const Subheader = styled.div`
-  font-weight: 300;
-  font-size: 26px;
-`
-
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   width: 100%;
   padding: 20px;
   `
+
+  const Column = styled.div`
+  background: #fff; 
+  max-width: 50%;
+  width: 50%;
+  float: left; 
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: scroll; 
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &:last-child {
+    background: white;
+    border-top: 1px solid rgba(255,255,255,0.5);
+  }
+`
+const Wrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+`
+
+
+
+const Main = styled.div`
+  padding-left: 60px;
+`

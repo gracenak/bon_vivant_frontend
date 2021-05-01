@@ -15,7 +15,6 @@ export const addRecipe = (data) => {
             alert(recipe.error)
         } else {
         dispatch({type: 'ADD_RECIPE', payload: recipe})
-        alert('Your recipe has been created! Return back to Recipes to view')
         }
     })
   }

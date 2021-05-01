@@ -4,16 +4,15 @@ A collection of recipes for people to share and review.
 
 This react application was created as a project requirement for the <a href="https://flatironschool.com/career-courses/coding-bootcamp/online">Flatiron Online Software Engineering Program</a>.
 
-For more information, check out <a href="https://gracenak.medium.com/debugging-typeerror-cannot-read-property-value-of-undefined-f1c729df00b6">my blog</a> and a <a href="https://www.youtube.com/watch?v=r4Jg6Goo1lM&feature=youtu.be">walkthrough demonstration</a> of this project.
+For more information, check out <a href="https://gracenak.medium.com/debugging-typeerror-cannot-read-property-value-of-undefined-f1c729df00b6">my blog</a> and a <a href="https://www.youtube.com/watch?v=Mky4XIjxTDg">walkthrough demonstration</a> of this project.
 
-An MVP React Frontend application with a Rails API backend that demonstrates Client-Server Communication and uses:
+An MVP SPA React/Redux Frontend application with a Rails API backend that demonstrates Client-Server Communication and uses:
 <h4>React</h4>
 <ul>
-    <li> OOJS classes and functions to encapsulate related data and behavior
-    <li> ES6 Features such as 'let' & 'const'
-    <li> ES6 class and constructor function syntax to translate JSON responses into JS model objects
-    <li> 3 AJAX calls
-    <li> Fetch with the appropriate HTTP verb
+    <li> Implements ES6 Features 
+    <li> Uses Redux middleware to respond to and modify state change
+    <li> Makes use of async actions and redux-thunk middleware to send data to and receive data from a server
+    <li> Handles the display of data with minimal data manipulation
 </ul>
 <h4>Rails</h4>
 <ul>
@@ -21,6 +20,7 @@ An MVP React Frontend application with a Rails API backend that demonstrates Cli
     <li> Serializers
     <li> Sql
     <li> ActiveRecord
+    <li> Rails API handles the data persistence with a database. Uses fetch() within actions to GET and POST data from API
     <li> ORM - Object Relational Mapping between Models
         <ol> 
             <li>belongs_to
@@ -30,9 +30,7 @@ An MVP React Frontend application with a Rails API backend that demonstrates Cli
         <ol>
             <li>Create
             <li>Read
-            <li>Delete
         </ol>
-    <li> One class level Active Record Scope methods
 </ul>
 
 <h2>Install Instructions</h2>
