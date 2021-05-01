@@ -15,7 +15,7 @@ const RecipeCard = (props) => {
                 {props.attributes.avg_rating}
             </div>
             <LinkWrapper>
-            <Link to={`/recipes/${props.attributes.slug}`}>View Recipe </Link>
+              <Link to={`/recipes/${props.attributes.slug}`}>View Recipe </Link>
             </LinkWrapper>
         </Card>
     )
