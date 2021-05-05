@@ -10,16 +10,15 @@ const Recipe = (props) => {
         <Wrapper>
             <Column>
                 <Main>
-                    <h2>{recipe ? recipe.title : null } </h2>
-                    Average Rating: {recipe ? recipe.avg_rating : null} 
-                    <h3>Total Cook Time: {recipe ? recipe.cook_time : null}</h3>
-                    <img src={recipe ? recipe.img : null} alt={recipe ? recipe.img : null}/>
+                    <h2>{recipe && recipe.title } </h2>
+                    Average Rating: {recipe && recipe.avg_rating} 
+                    <h3>Total Cook Time: {recipe && recipe.cook_time}</h3>
+                    <img src={recipe && recipe.img} alt={recipe && recipe.img}/>
                     <h3>Ingredients:</h3>
-                        {recipe ? recipe.ingredients : null}<br></br>
+                        {recipe && recipe.ingredients}<br></br>
                     <h3>Directions:</h3>
-                        {recipe ? recipe.directions : null}
+                        {recipe && recipe.directions}
                     <ReviewList reviews={recipe && recipe.reviews} />
-                    {/* <RecipeEdit recipe={recipe && recipe} /> */}
                 </Main>
             </Column>
             <Column>

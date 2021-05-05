@@ -16,7 +16,6 @@ class RecipesContainer extends Component {
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/recipes/:slug' render={(routerProps) => <Recipe {...routerProps} recipes={this.props.recipes && this.props.recipes} />} />
-                <Route exact path='/recipes/new' component={RecipeInput}/>
                 <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes} />} />
             </Switch>
             </div>
@@ -29,8 +28,6 @@ class RecipesContainer extends Component {
     }
 }
 
-//executes each change to the store's state
-// return value is the value of the props
 const mapStateToProps = state => {
     return {
         recipes: state.recipes
@@ -38,7 +35,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchRecipes })(RecipesContainer)
-//connect entire state of the store
-//fetchRecipes dispatches an action to the store 
-//connect RecipeContainter to a slice of the store's state
+
 

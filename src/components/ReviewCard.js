@@ -22,8 +22,6 @@ const ReviewCard = ({ review }) => {
 
 export default ReviewCard
 
-/* <button onClick={() => handleOnDelete(review)}> Delete</button> */
-
 const ReviewContainer = styled.div`
   display: flex;
   flex-direction: row;

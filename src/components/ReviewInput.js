@@ -34,12 +34,12 @@ class ReviewInput extends Component {
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <Field>
-                        <input type="text" name="comment" placeholder="comment" value={this.state.comment || ''} onChange={this.handleOnChange}/>
+                        <input type="text" name="comment" placeholder="comment" value={this.state.comment} onChange={this.handleOnChange}/>
                     </Field>
                 <RatingContainer>
                     <RatingLabel> Rate This Recipe</RatingLabel>
                     <Field>
-                    <select name="rating" value={this.state.rating || '5'} onChange={this.handleOnChange}>
+                    <select name="rating" value={this.state.rating} onChange={this.handleOnChange}>
                         <option>5</option>
                         <option>4</option>
                         <option>3</option>
@@ -49,7 +49,7 @@ class ReviewInput extends Component {
                     </Field>
                 </RatingContainer>
                     <Field>
-                        <input type="text" name="username" placeholder="Username" value={this.state.username || ''} onChange={this.handleOnChange}/>
+                        <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleOnChange}/>
                     </Field>
                     <SubmitBtn type="submit">Create A Review</SubmitBtn>
                 </form>
