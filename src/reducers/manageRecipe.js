@@ -16,25 +16,7 @@ export default function manageRecipe(state = {recipes: []}, action) {
                     return recipe
                 }
             })
-            return {...state, recipes: recipes}
-        case 'DELETE_REVIEW':
-            let allRecipes = state.recipes.filter(recipe => {
-                if (recipe.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return recipe
-                }
-            })
-            return {...state, recipes: allRecipes}           
-        case 'EDIT_RECIPE':
-            let RecipesToEdit = state.recipes.map(recipe => {
-                if (recipe.id === action.payload.id) {
-                    return action.payload
-                } else {
-                    return recipe
-                }
-            })
-            return {...state, recipes: RecipesToEdit}
+            return {...state, recipes: recipes}           
         default:
             return state
     }

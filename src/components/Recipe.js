@@ -1,12 +1,10 @@
 import React from 'react'
 import ReviewsContainer from '../containers/ReviewsContainer'
-// import RecipeEdit from './RecipeEdit'
 import styled from "styled-components";
-import ReviewList from '../components/ReviewList'
+import ReviewList from './ReviewList'
 
 const Recipe = (props) => {
-    // let recipe = props.recipes[props.match.params.id - 1]
-    let recipe = props.recipes.filter(recipe => recipe.slug == props.match.params.slug)[0]
+    let recipe = props.recipes.filter(recipe => recipe.slug === props.match.params.slug)[0]
 
     return (
         <Wrapper>
@@ -59,8 +57,3 @@ const Column = styled.div`
 const Main = styled.div`
   padding-left: 60px;
 `
-
-
-// <LinkWrapper>
-// <Link to={`/recipes/${recipe.slug}/edit`}>Edit Recipe </Link>
-// </LinkWrapper>

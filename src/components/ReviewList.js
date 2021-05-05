@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { deleteReview } from '../actions/deleteReview'
 import styled from "styled-components";
 import ReviewCard from './ReviewCard'
 
@@ -16,9 +14,9 @@ const ReviewList = ({ reviews }) => {
         </RatingGrid> 
     )
 }
-/* <button onClick={() => handleOnDelete(review)}> Delete</button> */
 
-export default connect(null, { deleteReview })(ReviewList)
+export default ReviewList
+
 
 const RatingGrid = styled.div`
   border-radius: 4px;

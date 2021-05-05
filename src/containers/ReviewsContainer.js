@@ -1,16 +1,28 @@
-import { Component } from 'react'
+// import { Component } from 'react'
+import React from 'react'
 import ReviewInput from '../components/ReviewInput'
 import styled from "styled-components";
-class ReviewsContainer extends Component {
-    render() {
-        return (
-            <ReviewWrapper>
-                <ReviewHeadline>Share A Review </ReviewHeadline>
-                <ReviewInput recipe={this.props.recipe}
-                             recipeId={this.props.recipe && this.props.recipe.id} />
-            </ReviewWrapper>
-        )
-    }   
+// class ReviewsContainer extends Component {
+//     render() {
+//         return (
+//             <ReviewWrapper>
+//                 <ReviewHeadline>Share A Review </ReviewHeadline>
+//                 <ReviewInput recipe={this.props.recipe}
+//                              recipeId={this.props.recipe && this.props.recipe.id} />
+//             </ReviewWrapper>
+//         )
+//     }   
+// }
+
+const ReviewsContainer = props => {
+
+      return (
+          <ReviewWrapper>
+              <ReviewHeadline>Share A Review </ReviewHeadline>
+              <ReviewInput recipe={props.recipe}
+                           recipeId={props.recipe && props.recipe.id} />
+          </ReviewWrapper>
+      )   
 }
 
 export default ReviewsContainer

@@ -39,7 +39,7 @@ class ReviewInput extends Component {
                 <RatingContainer>
                     <RatingLabel> Rate This Recipe</RatingLabel>
                     <Field>
-                    <select name="rating" value={this.state.rating || ''} onChange={this.handleOnChange}>
+                    <select name="rating" value={this.state.rating || '5'} onChange={this.handleOnChange}>
                         <option>5</option>
                         <option>4</option>
                         <option>3</option>
