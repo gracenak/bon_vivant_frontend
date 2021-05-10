@@ -3,21 +3,23 @@ import RecipeCard from './RecipeCard'
 import styled from "styled-components";
 import RecipeInput from '../components/RecipeInput'
 
-const RecipeList = (props) => {
+const RecipeList = ({recipes}) => {
 
-    const card = props.recipes.map(recipe => 
+    const card = recipes.map(recipe => 
         <RecipeCard key={recipe.title}
-                    attributes={recipe} />
+                    attributes={recipe} 
+                    />
     )
+
         
     return(
           <Wrapper>
             <Column>
                 <Main>
-                <Grid>
-                {card}
-            </Grid>
-            </Main>
+                  <Grid>
+                    {card}
+                  </Grid>
+                </Main>
             </Column>
             <Column>
               <RecipeInput />
@@ -28,6 +30,7 @@ const RecipeList = (props) => {
 }
 
 export default RecipeList
+
 
 const Grid = styled.div`
   display: grid;

@@ -5,10 +5,14 @@ import styled from "styled-components";
 
 const NavBar = () => {
     return (
-        <Wrapper>
-            <NavLink to= '/recipes' style={{paddingRight: '20px'}}>Recipes</NavLink>
-            <NavLink to= '/' style={{paddingRight: '20px'}}>Home</NavLink>
-        </Wrapper>
+    <Wrapper>
+        <NavWrapper>
+            <LinkWrapper>
+                <NavLink to= '/'>Home</NavLink>
+                <NavLink to= '/recipes'>Recipes</NavLink> 
+            </LinkWrapper>
+        </NavWrapper>
+    </Wrapper>
     )
 }
 
@@ -20,3 +24,31 @@ const Wrapper = styled.div`
   color: black;
   font-family: 'Poppins-Bold';
 `
+
+const LinkWrapper = styled.div `
+    
+ a {
+    float:left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+ a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+  `
+
+  const NavWrapper = styled.div` 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  `

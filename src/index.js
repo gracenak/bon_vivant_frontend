@@ -11,16 +11,11 @@ import { BrowserRouter as Router } from 'react-router-dom'
 const composeEnhancers = composeWithDevTools({
   // Specify here name, actionsBlacklist, actionsCreators and other options
 });
- 
-const middleware = [
-  thunk,
-];
 
 const store = createStore(
   manageRecipe,
   composeEnhancers(
-    applyMiddleware(...middleware)
-    // other store enhancers if any
+    applyMiddleware(thunk)
   )
 );
 

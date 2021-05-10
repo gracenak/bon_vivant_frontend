@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 
-const ReviewCard = ({ review }) => {
+const ReviewCard = ({ review, handleDelete }) => {
 
     return (
         <Card>
@@ -16,6 +16,7 @@ const ReviewCard = ({ review }) => {
             <ReviewComment>
                 {review.comment}
             </ReviewComment>
+            <DeleteBtn onClick={() => handleDelete(review)}>Delete</DeleteBtn>
         </Card>
     )
 }
@@ -40,13 +41,31 @@ const ReviewComment = styled.div`
   padding: 0 0 20px 0;
   font-size: 14px;
 `
+
 const ReviewRating = styled.div`
   padding: 20px 0px 0px 0px;
   font-family: 'Poppins-Bold';
   font-size: 18px;
 `
+
 const ReviewAuthor = styled.div`
   padding: 20px 0px 0px 0px;
   font-family: 'Poppins-Bold';
   font-size: 15px;
+`
+
+const DeleteBtn = styled.button`
+  color: #fff;
+  background-color: #71b406;
+  border-radius: 4px;   
+  padding:12px 12px;  
+  border: 1px solid #71b406;
+  width:17%;
+  font-size:18px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  &:hover {
+    background: #71b406;
+    border-color: #71b406;
+  }
 `

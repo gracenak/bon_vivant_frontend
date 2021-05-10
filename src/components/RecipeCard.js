@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components";
 
 const RecipeCard = (props) => {
+
     return (
         <Card>
             <RecipeTitle>
@@ -24,7 +25,7 @@ const RecipeCard = (props) => {
 export default RecipeCard
 
 const Card = styled.div`
-  border: 1px solid #efefef;
+  border: 3px solid #efefef;
   background: #fff;
   text-align: center
 `;
@@ -47,13 +48,22 @@ const RecipeTitle = styled.div`
 const LinkWrapper = styled.div`
   margin: 30px 0 20px 0;
   height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   a {
       color: #fff;
       background: #000;
       border-radius: 4px;
-      padding: 10px 50px;
+      padding: 10px 40px;
       border: 1px solid #000;
-      width: 100%;
+      width: 35%;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column
   }
 `;

@@ -17,6 +17,9 @@ const Home = () => {
 export default Home
 
 const Welcome = styled.div`
+ body {
+  background-color: #f6f1f0;
+ }
   text-align: center;
   max-width: 1200px;
   margin-left: auto;
