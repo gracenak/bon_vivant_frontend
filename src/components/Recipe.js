@@ -3,6 +3,7 @@ import ReviewsContainer from '../containers/ReviewsContainer'
 import styled from "styled-components";
 import ReviewList from './ReviewList'
 // import { Link } from 'react-router-dom'
+import RecipeEdit from '../components/RecipeEdit'
 
 const Recipe = (props) => {
     let recipe = props.recipes.filter(recipe => recipe.slug === props.match.params.slug)[0]
@@ -23,7 +24,7 @@ const Recipe = (props) => {
                     <Link to={recipe && `/recipes/${recipe.slug}/edit`} > Edit Recipe</Link>
                 </LinkWrapper> */}
                 <ReviewList reviews={recipe && recipe.reviews} />
-
+                <RecipeEdit recipe={recipe}/>
                 </Main>
             </Column>
             <Column>
