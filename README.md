@@ -30,6 +30,8 @@ An MVP SPA React/Redux Frontend application with a Rails API backend that demons
         <ol>
             <li>Create
             <li>Read
+            <li>Update
+            <li>Delete
         </ol>
 </ul>
 
