@@ -30,6 +30,9 @@ class ReviewInput extends Component {
     }
 
     render() {
+        // const ratingOptions=[5,4,3,2,1].map((score, index) => {
+        //     <input type="radio" name="rating" value={score} onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
+        // })
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit}>
@@ -46,6 +49,19 @@ class ReviewInput extends Component {
                         <option>2</option>
                         <option>1</option>
                     </select>
+                    </Field>
+                    <Field>
+                        <input type="radio" name="rating" value={this.state.rating} onChange={this.handleOnChange}/>
+                        <Fieldset>
+                        <span class="star-cb-group">
+                            <input type="radio" id="rating-5" name="rating" value="5" /><Label for="rating-5">5</Label>
+                            <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+                            <input type="radio" id="rating-3" name="rating" value="3" /><Label for="rating-3">3</Label>
+                            <input type="radio" id="rating-2" name="rating" value="2" /><Label for="rating-2">2</Label>
+                            <input type="radio" id="rating-1" name="rating" value="1" /><Label for="rating-1">1</Label>
+                            <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><Label for="rating-0">0</Label>
+                        </span>
+                        </Fieldset>
                     </Field>
                 </RatingContainer>
                     <Field>
@@ -112,4 +128,15 @@ const RatingLabel = styled.div`
   padding: 15px 0;
   font-weight: bold;
   color: black;
+`
+
+const Fieldset = styled.div `
+    border: 0;
+    width: 5em;
+    border-radius: 1px;
+    margin: 1em auto;
+     
+`
+const Label = styled.div `
+    display: inline-block
 `

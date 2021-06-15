@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components";
+import LikeRecipe from '../components/LikeRecipe'
+import BookmarkRecipe from '../components/BookmarkRecipe'
+
 
 const RecipeCard = (props) => {
 
     return (
         <Card>
+            <BookmarkRecipe />
             <RecipeTitle>
                 {props.attributes.title}
             </RecipeTitle>
@@ -18,6 +22,7 @@ const RecipeCard = (props) => {
             <LinkWrapper>
               <Link to={`/recipes/${props.attributes.slug}`}>View Recipe </Link>
             </LinkWrapper>
+            <LikeRecipe />
         </Card>
     )
 }

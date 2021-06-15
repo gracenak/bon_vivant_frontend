@@ -37,9 +37,7 @@ class RecipeEdit extends Component {
             <RecipeHeadline>Edit Recipe</RecipeHeadline>
             <div className="form-container">
             <form onSubmit={this.handleOnSubmit}>
-            <Field>
-                <input type="text" placeholder="Title" value={this.state.title} name="title" onChange={this.handleOnChange}/>
-            </Field>
+
             <Field>
                 <input type="text" placeholder="Image URL" value={this.state.img} name="img" onChange={this.handleOnChange}/>
             </Field>
