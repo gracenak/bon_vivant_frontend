@@ -35,6 +35,9 @@ class ReviewInput extends Component {
         // const ratingOptions=[5,4,3,2,1].map((score, index) => {
         //     <input type="radio" name="rating" value={score} onChange={() => console.log('selected:', score)} id={`rating-${score}`}/>
         // })
+        const ratingChanged = (newRating) => {
+          console.log(newRating);
+        };
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit}>
@@ -52,18 +55,20 @@ class ReviewInput extends Component {
                         <option>1</option>
                     </select>
                     </Field>
-                    <Field>
+                    
                         {/* <input type="radio" name="rating" value={this.state.rating} onChange={this.handleOnChange}/> */}
                         <Fieldset>
                         <ReactStars
                           count={5}
-                          handleOnChange={this.handleOnChange}
+                          name="rating"
+                          value={this.state.rating}
+                          onChange={ratingChanged}
+                          onChange={this.handleOnChange}
                           size={20}
                           activeColor="#ffd700"
                         />
-
                         </Fieldset>
-                    </Field>
+                    
                 </RatingContainer>
                     <Field>
                         <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleOnChange}/>
@@ -78,7 +83,7 @@ class ReviewInput extends Component {
 export default connect(null, { addReview })(ReviewInput) 
 
 const Field = styled.div`
-  border-radius: 4px;
+  border-radius: 4px; 
   input {
     width: 96%;
     min-height:40px;
@@ -94,7 +99,7 @@ const Field = styled.div`
     border-radius: 4px;
     border: 1px solid #E6E6E6;
     margin: 12px 0;
-    padding: 12px;      
+    padding: 12px;    
   }
 `
 
@@ -138,34 +143,3 @@ const Fieldset = styled.div `
     margin: 1em auto;
      
 `
-
-
-// const RatingBox = styled.div`
-//   background: #fff;
-//   display: flex;
-//   width: 100%;
-//   justify-content: center;
-//   overflow: hidden;
-//   flex-direction: row-reverse;
-//   position: relative;
-//   input { display: none; }
-//   label {
-//     cursor: pointer;
-//     width: 40px;
-//     height: 40px;
-//     margin-top: auto;
-//     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: 76%;
-//     transition: .3s;
-//   }
-//   input:checked ~ label, input:checked ~ label ~ label {
-//     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-//   }
-//   input:not(:checked) ~ label:hover,
-//   input:not(:checked) ~ label:hover ~ label {
-//     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-//   }
-// `
-
